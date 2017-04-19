@@ -29,3 +29,4 @@ if getOwner is not a constant function, use events (say Owner is an event).
 
 truffle(development)> lms.at('contract address').getOwner()
 truffle(development)> lms.at('contract address').Owner(function (e, result) { if (!e) {console.log(result)}})
+
