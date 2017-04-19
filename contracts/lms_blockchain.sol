@@ -44,8 +44,8 @@ contract lms_blockchain {
 
     uint public numMembers;
     uint public numBooks;
-    mapping(uint => Book) catalog;
-    mapping(uint => Member) members;
+    mapping(uint => Book) public catalog;
+    mapping(uint => Member) public members;
 
     modifier onlyOwner {
         if (msg.sender != owner)
@@ -123,10 +123,12 @@ contract lms_blockchain {
         return(members[index].name, members[index].account, members[index].status);
     }
 
-    function getBookDetails(uint index) constant returns(string, string, string, address, State, uint) {
-        return(catalog[index].title, catalog[index].publisher, catalog[index].author, 
-            catalog[index].currentOwner, catalog[index].state, catalog[index].lastIssueDate);
+    function getBookDetails(uint index) constant returns(string) {
+        return(catalog[index].title);
     }
+    // function getBookDetails(uint index) constant returns(string, string, string, address, State, uint) {
+    //     return(catalog[index].title, catalog[index].publisher, catalog[index].author,catalog[index].currentOwner, catalog[index].state, catalog[index].lastIssueDate);
+    // }
 
   
     function getMemberList() constant returns(string) {

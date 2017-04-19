@@ -68,7 +68,6 @@ contract("lms_blockchain", function() {
     });
     
     describe('getMemberDetails', function() {
-        // this test case should return a string containing names of all members seperated by /n
         it('should return the detail of given member', async function() {
             assert.equal( await lms.getNumberOfMembers().valueOf(), 1);
             await lms.addMember('Sanchit', 0);
@@ -76,9 +75,28 @@ contract("lms_blockchain", function() {
             assert.equal(name, "Sanchit");
             assert.equal(account, 0);
             assert.equal(status.valueOf(), 0);
-            // var details = ("Sanchit", 0, 0)
-            // assert.equal(await lms.getMemberDetails(await lms.getNumberOfMembers().valueOf()), details); 
-
         });
     });
+
+    describe('getBookDetails', function() {
+        it('should return the detail of given book', async function() {
+            assert.equal( await lms.getNumberOfBooks().valueOf(), 0);
+            await lms.addBook("DSA", "Coreman", "o'reilly");
+            assert.equal( await lms.getNumberOfBooks().valueOf(), 1);
+            let numBooks = await lms.getNumberOfBooks();
+            console.log(numBooks.valueOf())
+            let details = await lms.getBookDetails(numBooks.valueOf());
+            console.log(details);
+            // assert.equal(await lms.getBookDetails(await lms.getNumberOfBooks().valueOf()), "DSA");
+            // let [title, publisher, author, 
+            // currentOwner, state, lastIssueDate ] = await lms.getBookDetails(await lms.getNumberOfBooks().valueOf());
+            // assert.equal(title, "DSA");
+            // assert.equal(publisher, "Coreman");
+            // assert.equal(author, "o'reilly");
+            // assert.equal(author, msg.sender);
+            // assert.equal(state.valueOf(), 0);
+            // assert.equal(lastIssueDate,0);
+        });
+    });
+
 });
