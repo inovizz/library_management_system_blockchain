@@ -5,34 +5,36 @@ SPEED UP
 ********
 
 
-Killable -- zeppelin
+Killable -- zeppelin - pending
 
-modifier - Only member
+modifier - Only member - Pending
 
-constructor
+constructor - ✓
 
-addMember
+addMember - ✓  (test case pending for duplicate and owner) and Reactivate if member is deactivated
 
-removeMember
+removeMember - Pending
 
-getOwnerDetails
+getOwnerDetails - ✓
 
-get MemberDetails
+get MemberDetails - ✓ 
 
-addBook
+addBook - ✓ (test case completed)
 
-addMemberWithBooks
+addMemberWithBooks - ✓ (test case pending)
 
-getBook
+getBook - Pending
 
-getBooks
+getBooks - pending
 
-getMyBooks
+getMyBooks - Pending
 
-getAllBooks
+borrowBook - ✓
 
-borrowBook
+returnBook - ✓
 
-returnBook
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+issues faced - 
 
-TestCases
+memory to storage
+truffle installation
