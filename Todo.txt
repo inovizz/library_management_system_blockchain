@@ -3,3 +3,36 @@ solidity --- memory vs storage, type casting, test cases in solidity, zeppelin
 
 SPEED UP
 ********
+
+
+Killable -- zeppelin
+
+modifier - Only member
+
+constructor
+
+addMember
+
+removeMember
+
+getOwnerDetails
+
+get MemberDetails
+
+addBook
+
+addMemberWithBooks
+
+getBook
+
+getBooks
+
+getMyBooks
+
+getAllBooks
+
+borrowBook
+
+returnBook
+
+TestCases

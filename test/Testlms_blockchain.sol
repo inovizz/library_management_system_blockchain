@@ -10,8 +10,20 @@ contract Testlms_blockchain {
     lms_blockchain lms = lms_blockchain(DeployedAddresses.lms_blockchain());
     // uint expected = 10000;
     Assert.equal(lms.numMembers(), 1, "member created");
+    // lms.addMember("sanchit", msg.sender);
+    // Assert.equal(lms.getOwner(), "sanchit", "member found");
     // Assert.equal(lms.getNumberOfBooks(), 0, "Initally zero books found");
   }
+
+
+  // function testgetOwner() {
+
+  //   lms_blockchain lms = lms_blockchain(DeployedAddresses.lms_blockchain());
+  //   // uint expected = 10000;
+  //   lms.lms_blockchain("sanchit");
+  //   Assert.equal(lms.getOwner(), "sanchit", "Owner Found");
+  //   // Assert.equal(lms.getNumberOfBooks(), 0, "Initally zero books found");
+  // }
 
   // function testInitialBalanceWithNewMetaCoin() {
   //   MetaCoin meta = new MetaCoin();
