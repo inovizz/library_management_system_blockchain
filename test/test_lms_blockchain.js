@@ -4,7 +4,7 @@
 
 const lms_blockchain = artifacts.require("../contracts/lms_blockchain.sol");
 
-contract("lms_blockchain", function() {
+contract("lms_blockchain", function(accounts) {
     let lms;
 
     beforeEach(async function() {
@@ -18,6 +18,12 @@ contract("lms_blockchain", function() {
             assert.equal(memberCount, 1, "Should have owner as first member");
             console.log(memberCount); // initially the member count should be 1
         });
+        it("should return the owner details", async function(){
+            let [name, account] = await lms.getOwnerDetails();
+            console.log(await lms.getOwnerDetails());
+            assert.equal(name, "Owner");
+            assert.equal(account, web3.eth.coinbase);
+        });
     });
 
     describe('addMember', function() {
@@ -27,7 +33,10 @@ contract("lms_blockchain", function() {
     // - owner of the contract can not be added using addMember function
         it('should add a new member', async function() {
             assert.equal( await lms.getNumberOfMembers().valueOf(), 1);
-            await lms.addMember('New Member', 0);
+            console.log(await lms.getNumberOfMembers().valueOf());
+            console.log("jhgddjhdgh");
+            await lms.addMember('New Member', 0x0);
+            console.log(await lms.getNumberOfMembers().valueOf());
             assert.equal(await lms.getNumberOfMembers().valueOf(), 2, "count should be 2");
         });
 
