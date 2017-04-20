@@ -1,16 +1,18 @@
+[![Build Status](https://travis-ci.org/inovizz/library_management_system_blockchain.svg?branch=master)](https://travis-ci.org/inovizz/library_management_system_blockchain)
+
 Note - Under Development!
 
 # library_management_system_blockchain
 A community library management system built using ethereum blockchain.
 
 Setup -
-"""
+'''
 Install testrpc and truffle
 $ npm install -g ethereumjs-testrpc
 $ npm install -g truffle
 $ truffle install zeppelin
 $ #clone the repo
-"""
+'''
 
 Usage -
 """
