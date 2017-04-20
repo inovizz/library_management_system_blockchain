@@ -4,7 +4,7 @@
 
 const lms_blockchain = artifacts.require("../contracts/lms_blockchain.sol");
 
-contract("lms_blockchain", function(accounts) {
+contract("lms_blockchain", function(accounts){
     let lms;
 
     beforeEach(async function() {
@@ -64,7 +64,7 @@ contract("lms_blockchain", function(accounts) {
             assert.equal(await lms.getNumberOfBooks().valueOf(), 2, "count should be 2"); // add another book
         });
     });
-
+});
     // describe('getMemberList', function() {
     //     // this test case should return a string containing names of all members seperated by /n
     //     it.skip('should return the list of members seperated by /n', async function() {
@@ -108,4 +108,3 @@ contract("lms_blockchain", function(accounts) {
     //         // assert.equal(lastIssueDate,0);
     //     });
     // })
-});
