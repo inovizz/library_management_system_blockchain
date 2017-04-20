@@ -1,14 +1,8 @@
-# library_management_system_blockchain
-(Under Development)
-
-[![Build Status](https://travis-ci.org/inovizz/library_management_system_blockchain.svg?branch=master)](https://travis-ci.org/inovizz/library_management_system_blockchain)
+#A Community Library using Ethereum Blockchain
+[![Build Status](https://travis-ci.org/inovizz/library_management_system_blockchain.svg?branch=master)](https://travis-ci.org/inovizz/library_management_system_blockchain) [Under Development]
 
 
-##Intro - 
-
-A community library built using ethereum blockchain.
-
-##Setup -
+Setup -
 
 ```
 Install testrpc and truffle
@@ -18,7 +12,7 @@ $ truffle install zeppelin
 $ #clone the repo	
 ```
 
-##Usage -
+Usage -
 
 ```
 $ truffle compile # this would compile all available or newly added contracts
@@ -26,7 +20,7 @@ $ truffle deploy # this would deploy artifacts
 $ truffle test # to run test cases
 ```
 
-##Debug -
+Debug -
 
 ```
 $ truffle console
