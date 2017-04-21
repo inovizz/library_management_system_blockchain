@@ -1,6 +1,6 @@
-#A Community Library using Ethereum Blockchain
-[![Build Status](https://travis-ci.org/inovizz/library_management_system_blockchain.svg?branch=master)](https://travis-ci.org/inovizz/library_management_system_blockchain) [Under Development]
+# A Community Library using Ethereum Blockchain
 
+[![Build Status](https://travis-ci.org/inovizz/library_management_system_blockchain.svg?branch=master)](https://travis-ci.org/inovizz/library_management_system_blockchain) [Under Development]
 
 Setup -
 

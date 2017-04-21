@@ -1,9 +1,9 @@
 dist: trusty
-sudo: true
+sudo: false
 group: beta
 language: node_js
 node_js:
-  - "6"
+  - "7.9.0"
 before_install:
   - npm install truffle@3.2.1 -g
   - npm i -g ethereumjs-testrpc
