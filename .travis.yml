@@ -8,7 +8,8 @@ before_install:
   - npm install truffle@3.2.1 -g
   - npm i -g ethereumjs-testrpc
   - npm install
-  - truffle install zeppelin
 script:
   - testrpc > /dev/null &
+  - truffle compile
   - truffle test
+  - npm test
