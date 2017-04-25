@@ -136,7 +136,7 @@ contract LMS is Killable {
         string memory book;
         //Iterate over the entire catalog to find my books
         for (uint i = 1; i <= numBooks; i++) {
-            if (!ownerFilter || catalog[i].owner == msg.sender) {
+            if (!ownerFilter || catalog[i].owner == msg.sender || catalog[i].borrower == msg.sender) {
                 book = getBook(i);
                 count++;
                 if (bookString.toSlice().equals("".toSlice())) {
