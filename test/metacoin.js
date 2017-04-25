@@ -5,6 +5,7 @@ contract('MetaCoin', function(accounts) {
     return MetaCoin.deployed().then(function(instance) {
       return instance.getBalance.call(accounts[0]);
     }).then(function(balance) {
+      console.log("hello world");
       assert.equal(balance.valueOf(), 10000, "10000 wasn't in the first account");
     });
   });
@@ -22,13 +23,14 @@ contract('MetaCoin', function(accounts) {
     }).then(function(outCoinBalanceEth) {
       metaCoinEthBalance = outCoinBalanceEth.toNumber();
     }).then(function() {
-      assert.equal(metaCoinEthBalance, 2 * metaCoinBalance, "Library function returned unexpected function, linkage may be broken");
+      assert.equal(metaCoinEthBalance, 2 * metaCoinBalance, "Library function returned unexpeced function, linkage may be broken");
     });
   });
+
   it("should send coin correctly", function() {
     var meta;
 
-    // Get initial balances of first and second account.
+    //    Get initial balances of first and second account.
     var account_one = accounts[0];
     var account_two = accounts[1];
 
