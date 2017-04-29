@@ -28,6 +28,9 @@ contract LMS is Killable {
         State state;
         uint dateAdded;
         uint dateIssued;
+        string imgUrl;
+        string description;
+        string genre;
     }
 
     struct Member {
@@ -96,7 +99,7 @@ contract LMS is Killable {
         return (members[i].name, members[i].account, members[i].status, members[i].dateAdded);
     }
 
-    function addBook(string title, string author, string publisher) public onlyMember {
+    function addBook(string title, string author, string publisher, string imgUrl, string description, string genre) public onlyMember {
         ++numBooks;
         catalog[numBooks] = Book({
             id: numBooks,
@@ -107,7 +110,10 @@ contract LMS is Killable {
             owner: msg.sender,
             state: State.Available,
             dateAdded: now,
-            dateIssued: 0
+            dateIssued: 0,
+            imgUrl: imgUrl,
+            description: description,
+            genre: genre,
         });
         if (this.balance < 10**12) {
             throw;
@@ -118,7 +124,7 @@ contract LMS is Killable {
     }
 
     function getBook(uint i) constant returns (string bookString) {
-        var parts = new strings.slice[](9);
+        var parts = new strings.slice[](12);
         //Iterate over the entire catalog to find my books
         parts[0] = StringLib.uintToString(catalog[i].id).toSlice();
         parts[1] = catalog[i].title.toSlice();
@@ -129,6 +135,9 @@ contract LMS is Killable {
         parts[6] = StringLib.uintToString(uint(catalog[i].state)).toSlice();
         parts[7] = StringLib.uintToString(catalog[i].dateAdded).toSlice();
         parts[8] = StringLib.uintToString(catalog[i].dateIssued).toSlice();
+        parts[9] = catalog[i].imgUrl.toSlice();
+        parts[10] = catalog[i].description.toSlice();
+        parts[11] = catalog[i].genre.toSlice();
         bookString = ";".toSlice().join(parts);
     }
 
