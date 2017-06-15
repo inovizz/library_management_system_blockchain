@@ -3,13 +3,18 @@ sudo: false
 group: beta
 language: node_js
 node_js:
-  - "7.9.0"
+- '6'
+notifications:
+  slack:
+    # Encrypted through Travis CLI
+    secure: OQ+HKEdBjxkznrEb9wa19831hVwSkUeNX73LVDHYk3OMM6Lvo0N+4W05VrHcbkeu3ZkaW3GljfGR7sbsaNT8gzT3HhmynKl0Z7LCTMSWdDV0q55KoT/n3jMa9CaS6h93SB806sCvXnKrdf5npWQiNg6tpbZ0CF9GI+rsVa5LpPnK7sdpC1wX4E9ueG2S5E25LszZ9x+Pcocgk8N0XkIhtiQma9vboz8bO0J+ozm5sHvSUa1fDvDD/OiN7guXOoGIKk3EgKeuBRgVyAW6P9lRds4WSEMEXHu3cH67G/EhuxDxqQ0bjq/v9HenW8UqTxvH7XUujvDbcXb3mhXoYWFZIyYIyOktz3a0jXxLEExanb4jSpgTCu8CdVXfOyrUgqZDIAwnWstVdh4eidJg43yfOsFxmLoI3ROKwbm45dk7+O6LIVU8G6yyZv7lAYjCDuovnjXJG488BofdOOq0rnXaah7sh7s+CgPzkSgEzJu22W+Db0D0z8hRx9/l31IYvg3AQO1jEajP6v9YCPjfgC5mIl/h+oOeMFhNZyoZQUYgQtsIqiTKQTri2sXIs936CeupaiR0cAZIXbiVHS5BCjcqI2itsRPl3WRnQMnImSSbpV5uYnHjYWzF2D4HKMAOmSkc+SVos/9LmzsyTCzDlOQWg/aO4za4EC0Fpm48eaWgqxg=
 before_install:
-  - npm install truffle@3.2.1 -g
-  - npm i -g ethereumjs-testrpc
-  - npm install
+- npm install truffle@3.1.9 -g
+- npm i -g ethereumjs-testrpc
+- npm install
 script:
-  - testrpc > /dev/null &
-  - truffle compile
-  - truffle test
-  - npm test
+- testrpc > /dev/null &
+- truffle compile
+- truffle test
+- npm run build
+- npm test

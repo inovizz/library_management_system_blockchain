@@ -2,9 +2,60 @@
 <html>
 <head>
   <title>LMS - Library Management System</title>
+  <base href="/">
   <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
 </head>
+<style>
+    .loaderContainer {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loaderText {
+      margin-bottom: 72px;
+    }
+
+    .pramati-loader {
+      position: relative;
+      margin-left: -72px;
+    }
+
+    .hand {
+        width: 10px;
+        height: 50px;
+        border-radius: 10px;
+        position: absolute;
+        transform-origin: center calc(100% - 5px);
+        left: calc(50% - 5px);
+        top: calc(50% - 5px);
+      }
+      .hand.red {
+        background: rgba(236,116,112,0.8);
+      }
+      .hand.aqua {
+        background: rgba(108,205,235,0.8);
+        transform: rotateZ(120deg);
+      }
+      .hand.blue {
+        background: rgba(93,136,198,0.8);
+        transform: rotateZ(240deg);
+      }
+  </style>
 <body>
+  <div id="tag">Alpha</div>
+  <div class="loaderContainer" id="loader">
+    <div class="loaderText">Loading Application</div>
+    <div class="pramati-loader">
+      <div class="hand red"></div>
+      <div class="hand aqua"></div>
+      <div class="hand blue"></div>
+    </div>
+  </div>
+
   <div id="root"></div>
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"

@@ -1,61 +1,53 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as libraryActions from '../actions/libraryActions'
-import Main from './Main'
-import OwnerDetails from './OwnerDetails'
+import Dashboard from './Dashboard'
+import Header from './Header'
 
-const mapStateToProps = (state, ownProps) => {
+export const mapStateToProps = (state, ownProps) => {
   return {
-    ownerDetails : state.ownerDetails,
-    loading: state.loading
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getOwnerDetails: () => {
-      dispatch(libraryActions.getOwnerDetails())
-    }
+    session: state.session,
+    accounts: state.accounts
   }
 }
 
 export class App extends React.Component {
-  constructor (props) {
-    super(props)
-  }
-
   componentDidMount () {
-    this.props.getOwnerDetails()
+    // disabling the Loader screen screen
+    const loader = document.getElementById('loader')
+    if (loader) {
+      loader.style.display = 'none'
+    }
   }
-
-  isEmptyObject (obj) {
-    return Object.keys(obj).length
+  componentWillReceiveProps (nextProps) {
+    if(!nextProps.accounts && nextProps.session.authenticated && nextProps.session.user.account) {
+      this.props.getBalance(nextProps.session.user)
+    }
   }
-
   render () {
     return (
       <div>
-        <nav className='navbar navbar-default'>
-        <div className='container-fluid'>
-            <div className='navbar-header'>
-                <a className='navbar-brand' href='#'>LMS</a>
-            </div>
-            {
-              this.isEmptyObject(this.props.ownerDetails)
-              ? <OwnerDetails data={this.props.ownerDetails}/>
-              : ''
-            }
-        </div>
-        </nav>
+        <Header
+          loginSuccess = {
+            (response) => this.props.getMemberDetailsByEmail(response)
+          }
+          loginFailure = {
+            (response) => { console.log(response) }
+          }
+          session={ this.props.session }
+          accounts={ this.props.accounts }
+          logout = {
+            () => this.props.logout()
+          } />
         <div className='container'>
           {
-            this.isEmptyObject(this.props.ownerDetails)
-            ? <Main owner={this.props.ownerDetails}/>
-            : <div>Loading...</div>
+            this.props.session.authenticated
+            ? <Dashboard owner={this.props.session.user}/>
+            : <div>Logged out</div>
           }
         </div>
       </div>)
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, libraryActions)(App)

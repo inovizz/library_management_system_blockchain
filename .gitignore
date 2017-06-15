@@ -1,5 +1,10 @@
+.DS_STORE
 .idea
+.vscode
 build
+coverage
+dist/**
+installed_contracts
 node_modules
+npm-debug.log
 yarn-error.log
-ToDo.txt

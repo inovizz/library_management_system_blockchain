@@ -1,0 +1,73 @@
+{
+  "books": [{
+    "title": "The Design of Everyday Things",
+    "author": "Don Norman",
+    "publisher": "Tantor Media Inc",
+    "img": "https://images-eu.ssl-images-amazon.com/images/I/416Hql52NCL.jpg",
+    "description": "Even the smartest among us can feel inept as we fail to figure out which light switch or oven burner to turn on, or whether to push, pull, or slide a door. The fault, argues this ingenious—even liberating—book, lies not in ourselves, but in product design that ignores the needs of users and the principles of cognitive psychology.",
+    "genre": "Design"
+  }, {
+    "title": "Damn Good Advice (For People with Talent!): How To Unleash Your Creative Potential by America's Master Communicator",
+    "author": "George Lois",
+    "publisher": "Phaidon Press",
+    "img": "http://ecx.images-amazon.com/images/I/41x6UDYqILL._SX335_BO1,204,203,200_.jpg",
+    "description": "Damn Good Advice (For People With Talent!) is a look into the mind of one of America's most legendary creative thinkers, George Lois. Offering indispensle lessons, practical advice, facts, anecdotes and inspiration, this book is a timeless creative bible for all those looking to succeed in life, business and creativity.",
+    "genre": "Design"
+  }, {
+    "title": "Steal Like an Artist: 10 Things Nobody Told You About Being Creative",
+    "author": "Austin Kleon ",
+    "publisher": "Adams Media",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/71yg3JyYa9L.jpg",
+    "description": "You don’t need to be a genius, you just need to be yourself. That’s the message from Austin Kleon, a young writer and artist who knows that creativity is everywhere, creativity is for everyone. A manifesto for the digital age, Steal Like an Artist is a guide whose positive message, graphic look and illustrations, exercises, and examples will put readers directly in touch with their artistic side",
+    "genre": "Design"
+  }, {
+   "title": "Made to Stick: Why some ideas take hold and others come unstuck",
+   "author": "Chip Heath, Dan Heath",
+   "publisher": "Random House",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/41hMTwhl6IL.jpg",
+    "description": "What is that makes urban myths so persistent but many everyday truths so eminently forgettable? How do newspapers set about ensuring that their headlines make you want to read on? And why do we remember complicated stories but not complicated facts?",
+    "genre": "Literature"
+  }, {
+   "title": "Design Patterns - Elements of Reusable Object-Oriented Software",
+   "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+   "publisher": "Pearson Education",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/81gtKoapHFL.jpg",
+    "description": "The authors begin by describing what patterns are and how they can help you design object-oriented software. They then go on to systematically name, explain, evaluate, and catalog recurring designs in object-oriented systems. With Design Patterns as your guide, you will learn how these important patterns fit into the software development process, and how you can leverage them to solve your own design problems most efficiently",
+    "genre": "Programming"
+  }, {
+   "title": "Beautiful Code",
+   "author": "Andy Oram, Greg Wilson",
+   "publisher": "O'Reilly Media",
+    "img": "http://akamaicovers.oreilly.com/images/9780596510046/lrg.jpg",
+    "description": "How do the experts solve difficult problems in software development? In this unique and insightful book, leading computer scientists offer case studies that reveal how they found unusual, carefully designed solutions to high-profile projects. You will be able to look over the shoulder of major coding and design experts to see problems through their eyes. This is not simply another design patterns book, or another software engineering treatise on the right and wrong way to do things. The authors think aloud as they work through their project's architecture, the tradeoffs made in its construction, and when it was important to break rules.",
+    "genre": "Programming"
+  }, {
+   "title": "Joel on Software: And on Diverse and Occasionally Related Matters That Will Prove of Interest to Software Developers, Designers, and Managers, and to Those Who, Whether by Good Fortune or Ill Luck, Work with Them in Some Capacity",
+   "author": "Joel Spolsky",
+   "publisher": "Apress",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/51WaIrBLYtL._SX258_BO1,204,203,200_.jpg",
+    "description": "First published in 2004, Joel on Software contains 45 of the best articles from the site, from the early rants about hit-and-run management to the 2004 classic “How Microsoft Lost the API War,” and everything in between. It has gone through ten printings and remains a bestseller today.",
+    "genre": "Programming"
+  }, {
+   "title": "Team Geek - A Software Developer's Guide to Working Well with Others",
+   "author": "Brian W. Fitzpatrick and Ben Collins-Sussman",
+   "publisher": "O'Reilly Media",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/51M7AVrXBLL._SX322_BO1,204,203,200_.jpg",
+    "description": "In a perfect world, software engineers who produce the best code are the most successful. But in our perfectly messy world, success also depends on how you work with people to get your job done. In this highly entertaining book, Brian Fitzpatrick and Ben Collins-Sussman cover basic patterns and anti-patterns for working with other people, teams, and users while trying to develop software. This is valuable information from two respected software engineers whose popular series of talks—including 'Working with Poisonous People'—has attracted hundreds of thousands of followers.",
+    "genre": ""
+  }, {
+   "title": "Learning Python, 5th Edition - Powerful Object-Oriented Programming",
+   "author": "Mark Lutz",
+   "publisher": "O'Reilly Media",
+    "img": "http://akamaicovers.oreilly.com/images/0636920028154/lrg.jpg",
+    "description": "Get a comprehensive, in-depth introduction to the core Python language with this hands-on book. Based on author Mark Lutz’s popular training course, this updated fifth edition will help you quickly write efficient, high-quality code with Python. It’s an ideal way to begin, whether you’re new to programming or a professional developer versed in other languages.",
+    "genre": "Programming"
+  }, {
+   "title": "You've Got 8 Seconds - Communication Secrets for a Distracted World",
+   "author": "Paul HELLMAN",
+   "publisher": "AMACOM",
+    "img": "http://akamaicovers.oreilly.com/images/9780814438305/lrg.jpg",
+    "description": "Every day at work, people do three things: talk, listen, and pretend to listen. That’s not surprising—the average attention span has dropped to 8 seconds. To get heard, says high-stakes communications expert Paul Hellman, you need to focus your message, be slightly different, and deliver with finesse.",
+    "genre": ""
+  }]
+}

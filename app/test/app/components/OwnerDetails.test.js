@@ -1,27 +1,33 @@
 import React from 'react'
-import { render } from 'react-dom'
-import { mount, shallow } from 'enzyme'
+import { shallow } from 'enzyme'
 import OwnerDetails from '../../../components/OwnerDetails'
 
 describe('OwnerDetails', () => {
-  //  Test : Components and its child renders without crashing
-  it('renders without crashing', () => {
-    mount(<OwnerDetails data={[]} />)
-  })
-  describe('render', () => {
-    //  Test : Component gets rendered individually
-    it('should render the OwnerDetails', () => {
-      const data = {
-        'name' : 'Owner',
-        'account' : 'account',
-        'status' : 'status',
-        'dateAdded' : 'dateAdded'
+  let component, props;
+  beforeEach(() => {
+    props = {
+      data: {
+        name: 'User',
+        email: 'email'
+      },
+      logout: jest.fn(),
+      accounts: {
+        balance: '0'
       }
-      const actual = shallow(<OwnerDetails data={data} />)
-      const expected = (
-        <strong>{data.name}</strong>
-      )
-      expect(actual.contains(expected)).toEqual(true)
-    })
+    }
+    component = shallow(<OwnerDetails {...props} />)
+  })
+  it('should display the user name', () => {
+    expect(component.find('button').text().trim()).toBe('User')
+  })
+  it('should display the user email', () => {
+    expect(component.find('strong').nodes[1].props.children).toBe('email')
+  })
+  it('should display the user accounts balance', () => {
+    expect(component.find('strong').nodes[2].props.children).toEqual(['0',' Eth'])
+  })
+  it('should display the user accounts balance', () => {
+    component.find('li').last().simulate('click')
+    expect(props.logout.mock.calls.length).toBe(1)
   })
 })

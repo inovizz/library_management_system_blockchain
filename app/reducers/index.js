@@ -1,20 +1,28 @@
-import { combineReducers } from 'redux'
+import {
+  combineReducers
+} from 'redux'
 import {
   libraryReducer,
   loadingReducer,
   errorReducer,
   allBooksReducers,
-  ownerDetailsReducer,
-  myBooksReducers
+  myBooksReducers,
+  existingMemberReducer,
+  bookHistoryReducer
 } from './libraryReducer'
+import { sessionReducer } from 'redux-react-session'
+import { reducer as notifications } from 'react-notification-system-redux';
 
 const rootReducer = combineReducers({
   accounts: libraryReducer,
-  ownerDetails : ownerDetailsReducer,
   loading: loadingReducer,
   error: errorReducer,
   books: allBooksReducers,
-  myBooks : myBooksReducers
+  myBooks: myBooksReducers,
+  session: sessionReducer,
+  notifications,
+  isExistingMember: existingMemberReducer,
+  book_history: bookHistoryReducer
 })
 
 export default rootReducer

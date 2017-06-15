@@ -1,36 +1,38 @@
-const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path')
+
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
+  template: './app/index.html',
+  filename: 'index.html',
+  inject: 'body',
+  favicon: './app/img/favicon.ico'
+})
+
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ExtractTextPluginConfig = new ExtractTextPlugin({
+  filename: 'bundle.css',
+  disable: false,
+  allChunks: true
+})
 
 module.exports = {
-  entry: './app/javascripts/app.js',
+  entry: './app/index.js',
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'app.js'
+    path: path.resolve('dist'),
+    filename: 'index_bundle.js'
   },
-  plugins: [
-    // Copy our app's index.html to the build folder.
-    new CopyWebpackPlugin([
-      { from: './app/index.html', to: "index.html" }
-    ])
-  ],
   module: {
-    rules: [
-      {
-       test: /\.css$/,
-       use: [ 'style-loader', 'css-loader' ]
-      }
-    ],
     loaders: [
-      { test: /\.json$/, use: 'json-loader' },
+      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015'],
-          plugins: ['transform-runtime']
-        }
-      }
+        test: /\.css$/,
+        loader: ExtractTextPluginConfig.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
+      },
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
     ]
-  }
+  },
+  plugins: [HTMLWebpackPluginConfig, ExtractTextPluginConfig]
 }

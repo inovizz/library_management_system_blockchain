@@ -1,10 +1,13 @@
 {
   "parser": "babel-eslint",
     "extends": [
-      "standard"
+      "standard",
+      "eslint:recommended",
+      "plugin:react/recommended"
     ],
     "plugins": [
-      "babel"
+      "babel",
+      "react"
     ],
     "rules": {
       "key-spacing"          : 0,
