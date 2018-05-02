@@ -1,4 +1,4 @@
-pragma solidity ^0.4.0;
+pragma solidity ^0.4.18;
 // String Utils v0.1
 
 /// @title String Utils - String utility functions
@@ -6,7 +6,7 @@ pragma solidity ^0.4.0;
 library StringLib {
     /// @dev Converts an unsigned integert to its string representation.
     /// @param v The number to be converted.
-    function uintToBytes(uint v) constant internal returns (bytes32 ret) {
+    function uintToBytes(uint v) public constant internal returns (bytes32 ret) {
         if (v == 0) {
             ret = '0';
         }
@@ -20,7 +20,7 @@ library StringLib {
         return ret;
     }
 
-    function bytes32ToString(bytes32 x) constant internal returns (string) {
+    function bytes32ToString(bytes32 x)public constant internal returns (string) {
         bytes memory bytesString = new bytes(32);
         uint charCount = 0;
         for (uint j = 0; j < 32; j++) {
@@ -37,11 +37,11 @@ library StringLib {
         return string(bytesStringTrimmed);
     }
 
-    function uintToString(uint v) constant internal returns (string) {
+    function uintToString(uint v)public constant internal returns (string) {
         return bytes32ToString(uintToBytes(v));
     }
 
-    function addressToString(address x) constant internal returns (string) {
+    function addressToString(address x)public constant internal returns (string) {
         bytes memory s = new bytes(40);
         for (uint i = 0; i < 20; i++) {
             byte b = byte(uint8(uint(x) / (2**(8*(19 - i)))));
